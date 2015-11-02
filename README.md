@@ -22,13 +22,6 @@ Hier setzen Frameworks, wie AngularJS an.
 - Änderungen in JS sollen automatisch im DOM repräsentiert werden.
 - Ändeurngne im DOM sollen automatisch Verhalten im JS auslösen.
 
-## Diese Tools werden benötigt
-
-```cmd
-$ npm install -g gulp
-$ npm install -g bower
-```
-
 ## .tern-project
 
 Diese Datei wird durch das Plugin atom-ternjs (Editor atom) ausgelesen, um Autocomplete-Vorschläge für javascript (insbesondere angular) vorzugeben.
