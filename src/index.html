@@ -36,11 +36,13 @@
           <tr ng-repeat="attendee in workshop.attendees | filter:query | orderBy:attendee:reverse"><td>{{ attendee }}</td></tr>
         </table>
 
+        <p>&nbsp;<p>&nbsp;<p>
+        <table class="table table-striped">
+          <tr ng-repeat="attendee in workshop.attendees | startsWith:query"><td>{{ attendee }}</td></tr>
+        </table>
 
-<p>&nbsp;<p>&nbsp;<p>
-
-        <p ng-repeat="attendee in workshop.attendees | startsWith:query">{{ attendee }}</p>
-
+        <p>&nbsp;<p>&nbsp;<p>
+        <ws-directive></ws-directive>
       </section>
 
     </div>
@@ -51,5 +53,6 @@
     <script src="./samples/ws.attendee.filter.js" charset="utf-8"></script>
     <script src="./samples/ws.factory.js" charset="utf-8"></script>
     <script src="./samples/ws.service.js" charset="utf-8"></script>
+    <script src="./samples/ws.directive.js" charset="utf-8"></script>
   </body>
 </html>
