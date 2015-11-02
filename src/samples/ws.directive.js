@@ -17,7 +17,7 @@
         // two way binding
         name: '=',
         // one way binding / command/action
-        greet: '&'
+        greet: '&shout' // der Name beim Einbinden der Direktive in HTML
       }
     }
 
