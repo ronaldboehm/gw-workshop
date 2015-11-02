@@ -29,16 +29,17 @@
 
         <p>Teilnehmer am Workshop sind heute:</p>
 
+        <input ng-model="query" class="form-control">
+        <button ng-click="reverse=!reverse" class="btn btn-primary">Reverse sort order</button>
+
         <table class="table table-striped">
           <tr ng-repeat="attendee in workshop.attendees | filter:query | orderBy:attendee:reverse"><td>{{ attendee }}</td></tr>
         </table>
         <p>... und zwei weitere</p>
 
-        <input ng-model="query" class="form-control">
-        <button ng-click="reverse=!reverse" class="btn btn-primary">Reverse sort order</button>
-
 <p>&nbsp;<p>&nbsp;<p>
-        {{ workshop.attendees | startsWith:query }}
+
+        <p ng-repeat="attendee in workshop.attendees | startsWith:query">{{ attendee }}</p>
 
       </section>
 
