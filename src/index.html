@@ -36,6 +36,10 @@
 
         <input ng-model="query" class="form-control">
         <button ng-click="reverse=!reverse" class="btn btn-primary">Reverse sort order</button>
+
+<p>&nbsp;<p>&nbsp;<p>
+        {{ workshop.attendees | startsWith:query }}
+
       </section>
 
     </div>
@@ -43,5 +47,6 @@
     <!-- AngularJS -->
     <script src="./samples/ws.module.js" charset="utf-8"></script>
     <script src="./samples/ws.controller.js" charset="utf-8"></script>
+    <script src="./samples/ws.attendee.filter.js" charset="utf-8"></script>
   </body>
 </html>
