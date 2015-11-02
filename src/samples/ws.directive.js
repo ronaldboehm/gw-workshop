@@ -12,10 +12,11 @@
       transclude: true,
       // eigener scope (isolated scope):
       scope: {
-        // one way binding
+        // one way binding / text
         title: '@',
         // two way binding
         name: '=',
+        // one way binding / command/action
         greet: '&'
       }
     }
