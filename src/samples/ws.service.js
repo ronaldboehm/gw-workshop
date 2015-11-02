@@ -9,7 +9,11 @@
 
   function AttendeesService(attendeesFactory) {
 
-    this.getFirst = attendeesFactory.getAll()[0];
+    this.getFirst = getFirst;
+
+    function getFirst() {
+      return attendeesFactory.getAll()[0];
+    }
 
   }
 

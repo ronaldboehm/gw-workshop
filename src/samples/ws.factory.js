@@ -8,9 +8,12 @@
   function attendeesFactory() {
     return {
 
-      getAll: function() {
-        return ['Ronald', 'Susann', 'Christoph', 'Philipp'];
-      }
+      getAll: getAll
+
+    };
+
+    function getAll() {
+      return ['Ronald', 'Susann', 'Christoph', 'Philipp'];
 
     }
   }
