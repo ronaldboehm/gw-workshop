@@ -1,6 +1,13 @@
 <div>
 
-  <p class="lead"> Workshop: {{ workshop.title }} </p>
+  <p class="lead"> Workshop: {{ title }} </p>
+
+  <div>
+    <input ng-model="name" class="form-control">
+  </div>
+  <hr>
+  <button ng-click="greet()" class="btn btn-info">Greet</button>
+<br>
 
   <ng-transclude></ng-transclude>
 

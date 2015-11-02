@@ -6,9 +6,11 @@
     .controller('workshopController', WorkshopController);
 
     // ng-strict-di
-    WorkshopController.$inject = ['$interpolate', 'attendeesFactory']; // für uglifying/minification
+    WorkshopController.$inject = ['$interpolate', 'attendeesFactory', 'attendeesService']; // für uglifying/minification
 
-    function WorkshopController($interpolate, attendeesFactory) {
+    function WorkshopController($interpolate, attendeesFactory, attendeesService) {
+      var vm = this;
+
       // this -> Zugriff auf den Scope
       // in der view dann "... as workshop"
       //   <section class="sample" ng-controller="workshopController as workshop">
@@ -17,14 +19,21 @@
       // Vorteile:
       // - keine Abhängigkeit von $Scope
       // - in der view Möglichkeit der Unterscheidung bei mehreren Controllern
-      this.greeting = 'Hallo Welt';
-      this.name = 'Gregor';
+      vm.greeting = 'Hallo Welt';
+      vm.name = 'Gregor';
 
-      this.title = "AngularJS"
+      vm.title = "AngularJS"
 
-      this.expression = $interpolate('{{ name | uppercase }}');
-      this.uppercasedName = this.expression({ name: this.name });
+      vm.expression = $interpolate('{{ name | uppercase }}');
+      vm.uppercasedName = vm.expression({ name: vm.name });
 
-      this.attendees = attendeesFactory.getAll();
+      vm.attendees = attendeesFactory.getAll();
+      vm.firstAttendee = attendeesService.getFirst();
+
+      vm.greet = greet;
+
+      function greet() {
+        alert('Hello ' + vm.name);
+      }
     }
 }());
