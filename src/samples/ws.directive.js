@@ -8,7 +8,8 @@
 
   function wsDirective() {
     return {
-      template: '<p class="lead"> {{ workshop.title }} </p>'
+      templateUrl: './samples/ws.directive.tpl.html',
+      transclude: true
     }
 
   }
