@@ -25,10 +25,17 @@
         {{workshop.greeting}}
         <p>&nbsp;</p>
 
-        <p>Referent: {{workshop.uppercasedName}}</p>
+        <p>Referent: {{ workshop.uppercasedName }}</p>
 
         <p>Teilnehmer am Workshop sind heute:</p>
-        <p ng-repeat="attendee in workshop.attendees">{{attendee}}</p>
+
+        <table class="table table-striped">
+          <tr ng-repeat="attendee in workshop.attendees | filter:query | orderBy:attendee:reverse"><td>{{ attendee }}</td></tr>
+        </table>
+        <p>... und zwei weitere</p>
+
+        <input ng-model="query" class="form-control">
+        <button ng-click="reverse=!reverse" class="btn btn-primary">Reverse sort order</button>
       </section>
 
     </div>

@@ -23,6 +23,6 @@
       this.expression = $interpolate('{{ name | uppercase }}');
       this.uppercasedName = this.expression({ name: this.name });
 
-      this.attendees = ['Christoph', 'Philipp', 'Ronald', 'Susann'];
+      this.attendees = ['Ronald', 'Susann', 'Christoph', 'Philipp'];
     }
 }());
