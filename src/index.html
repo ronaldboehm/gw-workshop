@@ -4,6 +4,8 @@
     <link rel="icon" href="../favicon.ico">
     <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="../styles/samples.css" rel="stylesheet">
+
+    <script src="../bower_components/angular/angular.js"></script>
   </head>
 
   <body>
@@ -19,13 +21,17 @@
 
       <!-- Our Code goes here -->
       <section class="sample" ng-controller="workshopController">
-        {{test}}
+
+        {{greeting}}
+        <p ng-bind="greeting"></p>
+
+        <p>Teilnehmer am Workshop sind heute:</p>
+        <p ng-repeat="attendee in attendees">{{attendee}}</p>
       </section>
 
     </div>
 
     <!-- AngularJS -->
-    <script src="../bower_components/angular/angular.js"></script>
     <script src="./samples/ws.module.js" charset="utf-8"></script>
     <script src="./samples/ws.controller.js" charset="utf-8"></script>
   </body>
