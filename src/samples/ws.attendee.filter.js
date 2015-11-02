@@ -11,7 +11,7 @@
         return list;
 
       return list.filter(function(entry){
-        return entry[0].toLowerCase() === expression.toLowerCase();
+        return entry.toLowerCase().substring(0, expression.length) === expression.toLowerCase();
       });
     };
   }
