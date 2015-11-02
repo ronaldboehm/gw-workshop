@@ -1,0 +1,33 @@
+{
+  "name": "angular-training-leipzig",
+  "version": "0.0.1",
+  "authors": [
+    "Gregor Woiwode <gregor.woiwode@gmail.com>"
+  ],
+  "description": "This package contains the samples we are going to discuss during the course.",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "grossweber",
+    "javascript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.5",
+    "angular-messages": "1.4.5",
+    "angular-route": "1.4.5",
+    "angular-animate": "1.4.5",
+    "angular-cookies": "1.4.5",
+    "angular-sanitize": "1.4.5",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4",
+    "angular-mocks": "~1.4.5"
+  }
+}
