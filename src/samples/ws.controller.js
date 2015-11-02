@@ -6,9 +6,9 @@
     .controller('workshopController', WorkshopController);
 
     // ng-strict-di
-    WorkshopController.$inject = ['$interpolate']; // für uglifying/minification
+    WorkshopController.$inject = ['$interpolate', 'attendeesFactory']; // für uglifying/minification
 
-    function WorkshopController($interpolate) {
+    function WorkshopController($interpolate, attendeesFactory) {
       // this -> Zugriff auf den Scope
       // in der view dann "... as workshop"
       //   <section class="sample" ng-controller="workshopController as workshop">
@@ -23,6 +23,6 @@
       this.expression = $interpolate('{{ name | uppercase }}');
       this.uppercasedName = this.expression({ name: this.name });
 
-      this.attendees = ['Ronald', 'Susann', 'Christoph', 'Philipp'];
+      this.attendees = attendeesFactory.getAll();
     }
 }());

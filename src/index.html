@@ -35,7 +35,7 @@
         <table class="table table-striped">
           <tr ng-repeat="attendee in workshop.attendees | filter:query | orderBy:attendee:reverse"><td>{{ attendee }}</td></tr>
         </table>
-        <p>... und zwei weitere</p>
+
 
 <p>&nbsp;<p>&nbsp;<p>
 
@@ -49,5 +49,7 @@
     <script src="./samples/ws.module.js" charset="utf-8"></script>
     <script src="./samples/ws.controller.js" charset="utf-8"></script>
     <script src="./samples/ws.attendee.filter.js" charset="utf-8"></script>
+    <script src="./samples/ws.factory.js" charset="utf-8"></script>
+    <script src="./samples/ws.service.js" charset="utf-8"></script>
   </body>
 </html>
