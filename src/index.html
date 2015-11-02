@@ -20,13 +20,13 @@
     <div class="container">
 
       <!-- Our Code goes here -->
-      <section class="sample" ng-controller="workshopController">
+      <section class="sample" ng-controller="workshopController as workshop">
 
-        {{greeting}}
-        <p ng-bind="greeting"></p>
+        {{workshop.greeting}}
+        <p>&nbsp;</p>
 
         <p>Teilnehmer am Workshop sind heute:</p>
-        <p ng-repeat="attendee in attendees">{{attendee}}</p>
+        <p ng-repeat="attendee in workshop.attendees">{{attendee}}</p>
       </section>
 
     </div>
