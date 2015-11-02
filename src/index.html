@@ -18,16 +18,15 @@
     <div class="container">
 
       <!-- Our Code goes here -->
-      <section class="sample">
-        {{ 'Hallo Welt' }}
+      <section class="sample" ng-controller="workshopController">
+        {{test}}
       </section>
 
     </div>
 
     <!-- AngularJS -->
     <script src="../bower_components/angular/angular.js"></script>
-
-    <!-- Sample Scripts -->
     <script src="./samples/ws.module.js" charset="utf-8"></script>
+    <script src="./samples/ws.controller.js" charset="utf-8"></script>
   </body>
 </html>
