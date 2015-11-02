@@ -8,7 +8,7 @@
 
   function wsDirective() {
     return {
-      template: '<p class="lead">Workshop Directive</p>'
+      template: '<p class="lead"> {{ workshop.title }} </p>'
     }
 
   }

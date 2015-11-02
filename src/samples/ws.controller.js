@@ -20,6 +20,8 @@
       this.greeting = 'Hallo Welt';
       this.name = 'Gregor';
 
+      this.title = "AngularJS"
+
       this.expression = $interpolate('{{ name | uppercase }}');
       this.uppercasedName = this.expression({ name: this.name });
 
