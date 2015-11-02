@@ -32,16 +32,13 @@
         <input ng-model="query" class="form-control">
         <button ng-click="reverse=!reverse" class="btn btn-primary">Reverse sort order</button>
 
+        <p>&nbsp;<p>&nbsp;<p>
         <table class="table table-striped">
-          <tr ng-repeat="attendee in workshop.attendees | filter:query | orderBy:attendee:reverse"><td>{{ attendee }}</td></tr>
+          <tr ng-repeat="attendee in workshop.attendees | startsWith:query | orderBy:attendee:reverse"><td>{{ attendee }}</td></tr>
         </table>
 
         <p>&nbsp;<p>&nbsp;<p>
-        <table class="table table-striped">
-          <tr ng-repeat="attendee in workshop.attendees | startsWith:query"><td>{{ attendee }}</td></tr>
-        </table>
 
-        <p>&nbsp;<p>&nbsp;<p>
         <ws-controller-directive></ws-controller-directive>
 
         <p>&nbsp;<p>&nbsp;<p>
