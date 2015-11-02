@@ -5,7 +5,10 @@
     .module('workshop')
     .controller('workshopController', WorkshopController);
 
-    function WorkshopController() {
+    // ng-strict-di
+    WorkshopController.$inject = ['$scope']; // für uglifying/minification
+
+    function WorkshopController($scope) {
       // this -> Zugriff auf den Scope
       // in der view dann "... as workshop"
       //   <section class="sample" ng-controller="workshopController as workshop">
