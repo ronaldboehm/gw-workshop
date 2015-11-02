@@ -9,7 +9,7 @@
     WorkshopController.$inject = ['$interpolate', 'attendeesFactory', 'attendeesService']; // für uglifying/minification
 
     function WorkshopController($interpolate, attendeesFactory, attendeesService) {
-      var vm = this;
+      var vm = this; // wegen Callback-Funktion greet() unten
 
       // this -> Zugriff auf den Scope
       // in der view dann "... as workshop"
