@@ -1,9 +1,9 @@
-<html ng-app>
+<html ng-app="workshop">
   <head>
     <title>Learning AngularJS</title>
     <link rel="icon" href="../favicon.ico">
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="/styles/samples.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../styles/samples.css" rel="stylesheet">
   </head>
 
   <body>
@@ -19,11 +19,15 @@
 
       <!-- Our Code goes here -->
       <section class="sample">
+        {{ 'Hallo Welt' }}
       </section>
 
     </div>
 
     <!-- AngularJS -->
-    <script src="/bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+
+    <!-- Sample Scripts -->
+    <script src="./samples/ws.module.js" charset="utf-8"></script>
   </body>
 </html>
