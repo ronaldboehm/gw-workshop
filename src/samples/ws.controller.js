@@ -6,9 +6,9 @@
     .controller('workshopController', WorkshopController);
 
     // ng-strict-di
-    WorkshopController.$inject = ['$interpolate', 'attendeesFactory', 'attendeesService']; // für uglifying/minification
+    WorkshopController.$inject = ['$interpolate', '$scope', 'attendeesFactory', 'attendeesService']; // für uglifying/minification
 
-    function WorkshopController($interpolate, attendeesFactory, attendeesService) {
+    function WorkshopController($interpolate, $scope, attendeesFactory, attendeesService) {
       var vm = this; // wegen Callback-Funktion greet() unten
 
       // this -> Zugriff auf den Scope
@@ -22,10 +22,19 @@
       vm.greeting = 'Hallo Welt';
       vm.name = 'Gregor';
 
-      vm.title = "AngularJS"
+      vm.title = "AngularJS";
 
       vm.expression = $interpolate('{{ name | uppercase }}');
       vm.uppercasedName = vm.expression({ name: vm.name });
+      $scope.$watch(
+        // watch function
+        function() { return vm.name; },
+        // listener
+        function(newValue, oldValue) {
+          vm.uppercasedName = vm.expression({ name: vm.name });
+        }
+      );
+      // would not update
 
       vm.attendees = attendeesFactory.getAll();
       vm.firstAttendee = attendeesService.getFirst();
