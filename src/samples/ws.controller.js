@@ -44,5 +44,11 @@
       function greet() {
         alert('Hello ' + vm.name);
       }
+
+      setTimeout(function(){
+        $scope.$apply(function(){
+          vm.name = 'Matthias';
+        });
+      }, 3000);
     }
 }());
