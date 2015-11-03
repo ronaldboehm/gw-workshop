@@ -6,9 +6,9 @@
     .controller('workshopController', WorkshopController);
 
     // ng-strict-di
-    WorkshopController.$inject = ['$interpolate', '$scope', '$timeout', 'attendeesFactory', 'attendeesService']; // für uglifying/minification
+    WorkshopController.$inject = ['$interpolate', '$scope', '$timeout', 'attendeesFactory', 'attendeesService', 'asyncService']; // für uglifying/minification
 
-    function WorkshopController($interpolate, $scope, $timeout, attendeesFactory, attendeesService) {
+    function WorkshopController($interpolate, $scope, $timeout, attendeesFactory, attendeesService, asyncService) {
       var vm = this; // wegen Callback-Funktion greet() unten
 
       // this -> Zugriff auf den Scope
@@ -40,6 +40,10 @@
       vm.firstAttendee = attendeesService.getFirst();
 
       vm.greet = greet;
+
+      asyncService.doAsync(true)
+      .then(function(response) { console.info(response) })
+      .catch(function(error) { console.error(error) });
 
       function greet() {
         alert('Hello ' + vm.name);
