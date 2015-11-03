@@ -22,7 +22,8 @@
       <!-- Our Code goes here -->
       <section class="sample" ng-controller="workshopController as workshop">
 
-        {{workshop.greeting}}
+        <!-- :: <- one-time-binding ohne watcher -->
+        {{::workshop.greeting}}
         <p>&nbsp;</p>
 
         <p>Referent: {{ workshop.uppercasedName }}</p>
